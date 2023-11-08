@@ -1,0 +1,105 @@
+# Input informasi kendaraan, jenis bensin, dan kota tujuan
+nama_kendaraan = input("Nama kendaraan (contoh: mobil, motor): ")
+jenis_bensin = input("Jenis bensin (Pertalite/Pertamax/Pertamax Turbo): ")
+kota_tujuan = input("Kota tujuan (contoh: Jakarta, Bekasi, Depok, Tangerang, Bogor): ")
+
+# Menentukan harga dan jarak tempuh berdasarkan jenis bensin
+if jenis_bensin == "Pertalite":
+    harga_per_liter = 10000
+    jarak_tempuh_per_liter = 12
+elif jenis_bensin == "Pertamax":
+    harga_per_liter = 14000
+    jarak_tempuh_per_liter = 13
+elif jenis_bensin == "Pertamax Turbo":
+    harga_per_liter = 17000
+    jarak_tempuh_per_liter = 13.5
+else:
+    print("Jenis bensin tidak valid")
+    exit()
+
+# Menentukan jarak kota tujuan berdasarkan input
+if kota_tujuan == "Jakarta":
+    jarak_kota_tujuan = 20
+elif kota_tujuan == "Bekasi":
+    jarak_kota_tujuan = 35.7
+elif kota_tujuan == "Depok":
+    jarak_kota_tujuan = 5
+elif kota_tujuan == "Tangerang":
+    jarak_kota_tujuan = 99
+elif kota_tujuan == "Bogor":
+    jarak_kota_tujuan = 120.6
+else:
+    print("Kota tujuan tidak valid")
+
+# Menghitung pemakaian bensin
+pemakaian_bensin = jarak_kota_tujuan / jarak_tempuh_per_liter
+
+# Menghitung total harga bensin
+total_harga_bensin = pemakaian_bensin * harga_per_liter
+
+# Menampilkan output
+print("Nama Kendaraan:", nama_kendaraan)
+print("Jenis Bensin:", jenis_bensin)
+print("Kota yang Dituju:", kota_tujuan)
+print("Pemakaian Bensin (liter):", pemakaian_bensin)
+print("Total Harga Bensin (Rupiah):", total_harga_bensin)
+
+
+
+
+
+# Menampilkan output
+print("Nama Pembeli:", nama_pembeli)
+print("No Hp Pembeli:", no_hp_pembeli)
+print("Menu yang Dipesan:", pesan_menu)
+print("Jumlah Pesanan:", jumlah_pesanan)
+print("Harga yang Harus Dibayar (Rupiah):", total_harga)
+for i in range(1, 21):
+    if i % 3 == 0:
+        print("STT Nurul Fikri")
+    else:
+        print(i)
+
+
+
+
+
+# Menu Makanan
+menu_makanan = {
+    "Nasi Goreng": 15000,
+    "Mie Goreng": 12000,
+    "Ayam Geprek": 18000
+}
+# Menu Minuman
+menu_minuman = {
+    "Aneka Jus": 15000,
+    "Soft Drink": 10000,
+    "Sweet Ice Tea": 5000
+}
+# Input informasi pembeli
+nama_pembeli = input("Masukkan Nama Pembeli: ")
+no_hp_pembeli = input("Masukkan No Hp Pembeli: ")
+# Input pesanan (Makanan atau Minuman)
+jenis_pesanan = input("Pesan Menu Apa? (Makanan/Minuman): ").lower()
+# Menampilkan menu sesuai pesanan
+if jenis_pesanan == "makanan":
+    print("Menu Makanan:")
+    for makanan, harga in menu_makanan.items():
+        print(f"{makanan} - Rp. {harga}")
+elif jenis_pesanan == "minuman":
+    print("Menu Minuman:")
+    for minuman, harga in menu_minuman.items():
+        print(f"{minuman} - Rp. {harga}")
+else:
+    print("Jenis pesanan tidak valid")
+    exit()
+# Input pesanan dan jumlah pesanan
+pesan_menu = input("Masukkan pesanan: ")
+jumlah_pesanan = int(input("Masukkan Jumlah Pesanan: "))
+# Menghitung total harga berdasarkan pesanan
+if jenis_pesanan == "makanan" and pesan_menu in menu_makanan:
+    total_harga = menu_makanan[pesan_menu] * jumlah_pesanan
+elif jenis_pesanan == "minuman" and pesan_menu in menu_minuman:
+    total_harga = menu_minuman[pesan_menu] * jumlah_pesanan
+else:
+    print("Pesanan tidak valid")
